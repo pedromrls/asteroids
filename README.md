@@ -1,4 +1,4 @@
 # asteroids
 asteroids project for boot.dev
 
-Just updateting the readme to check connectivity
+Just updating the readme to check the connectivity
