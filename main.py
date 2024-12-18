@@ -5,6 +5,7 @@ from player import Player
 from asteroid import Asteroid
 from asteroidfield import AsteroidField
 import pygame  # type: ignore
+import sys
 
 
 def main():
@@ -42,10 +43,14 @@ def main():
         # player drawing
         for sprite in updatable:
             sprite.update(dt)
+        for obj in asteroids:
+            if obj.collision(player):
+                print("Game over!")
+                sys.exit()
         for sprite in drawable:
             sprite.draw(screen)
         pygame.display.flip()
-
+    
 
 if __name__ == "__main__":
     main()
