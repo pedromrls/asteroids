@@ -5,11 +5,12 @@ class Scoreboard:
         self.score = 0
         self.font = pygame.font.SysFont(None, font_size)
         self.x = x
-        self.y =y
+        self.y = y
         pass
 
-    def draw(self):
-        pass
+    def draw(self, screen):
+        render = self.font.render(str(self.score), False,(255, 255, 255) )
+        screen.blit(render, (self.x, self.y))
 
     def update(self):
         pass

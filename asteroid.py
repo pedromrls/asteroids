@@ -25,3 +25,11 @@ class Asteroid(CircleShape):
         asteroid_2 = Asteroid(self.position.x, self.position.y, new_radius)
         asteroid_1.velocity = self.velocity.rotate(random_angle) * 1.2
         asteroid_2.velocity = self.velocity.rotate(-random_angle) * 1.2
+
+    def get_points(self):
+        if self.radius == ASTEROID_MAX_RADIUS:  # large asteroid
+            return 5
+        elif self.radius == ASTEROID_MAX_RADIUS - ASTEROID_MIN_RADIUS:  # medium asteroid
+            return 10
+        else:  # small asteroid
+            return 20

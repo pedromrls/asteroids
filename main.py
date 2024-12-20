@@ -5,6 +5,7 @@ from player import Player
 from asteroid import Asteroid
 from asteroidfield import AsteroidField
 from shot import Shot
+from scoreboard import Scoreboard
 import pygame  # type: ignore
 import sys
 
@@ -18,6 +19,7 @@ def main():
     dt = 0
     screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
 
+    score = Scoreboard(SCORE_POS[0],SCORE_POS[1], 36 )
     # groups
     updatable = pygame.sprite.Group()
     drawable = pygame.sprite.Group()
@@ -45,6 +47,7 @@ def main():
                 return
         screen.fill("black")
         dt = clock.tick(60) / 1000
+        score.draw(screen)
         # player drawing
         for sprite in updatable:
             sprite.update(dt)
@@ -58,8 +61,10 @@ def main():
             # collision with bullets
             for shot in shots:
                 if asteroid.collision(shot):
+                    score.add_points(asteroid.get_points())
                     asteroid.split()
                     shot.kill()
+                    
 
         for sprite in drawable:
             sprite.draw(screen)
