@@ -28,8 +28,8 @@ class Asteroid(CircleShape):
 
     def get_points(self):
         if self.radius == ASTEROID_MAX_RADIUS:  # large asteroid
-            return 5
-        elif self.radius == ASTEROID_MAX_RADIUS - ASTEROID_MIN_RADIUS:  # medium asteroid
             return 10
-        else:  # small asteroid
+        elif self.radius == ASTEROID_MAX_RADIUS - ASTEROID_MIN_RADIUS:  # medium asteroid
             return 20
+        else:  # small asteroid
+            return 40

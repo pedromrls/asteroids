@@ -35,7 +35,7 @@ def main():
 
     # Asteroid field
     AsteroidField.containers = updatable
-    asteroid_field = AsteroidField()
+    
 
     # shot
     Shot.containers = (shots, drawable, updatable)
@@ -58,7 +58,7 @@ def main():
                 print("Game over!")
                 sys.exit()
 
-            # collision with bullets
+            # collision with bullets and points
             for shot in shots:
                 if asteroid.collision(shot):
                     score.add_points(asteroid.get_points())
