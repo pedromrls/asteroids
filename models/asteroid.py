@@ -1,5 +1,5 @@
-from circleshape import CircleShape
-from constants import *
+from utils.circleshape import CircleShape
+from utils.constants import *
 import pygame  # type: ignore
 import random
 

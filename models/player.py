@@ -1,6 +1,6 @@
-from circleshape import CircleShape
-from constants import *
-from shot import Shot
+from utils.circleshape import CircleShape
+from utils.constants import *
+from models.shot import Shot
 import pygame  # type: ignore
 
 

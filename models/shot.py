@@ -1,5 +1,5 @@
-from circleshape import CircleShape
-from constants import SHOT_RADIUS
+from utils.circleshape import CircleShape
+from utils.constants import SHOT_RADIUS
 import pygame  # type: ignore
 
 

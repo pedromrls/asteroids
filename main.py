@@ -1,11 +1,9 @@
 #!/usr/bin/env python3
 
-from constants import *
-from player import Player
-from asteroid import Asteroid
-from asteroidfield import AsteroidField
-from shot import Shot
-from scoreboard import Scoreboard
+
+from utils.constants import *
+from models import Player, Asteroid, AsteroidField, Shot
+from ui import Scoreboard
 import pygame  # type: ignore
 import sys
 

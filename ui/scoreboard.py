@@ -1,5 +1,5 @@
 import pygame  # type: ignore
-from constants import *
+from utils.constants import *
 
 class Scoreboard:
     def __init__(self):
