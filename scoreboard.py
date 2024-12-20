@@ -1,19 +1,16 @@
 import pygame  # type: ignore
+from constants import *
 
 class Scoreboard:
-    def __init__(self, x, y, font_size):
+    def __init__(self):
         self.score = 0
-        self.font = pygame.font.SysFont(None, font_size)
-        self.x = x
-        self.y = y
-        pass
+        self.color = FONT_COLOR_RGB
+        self.font = pygame.font.SysFont(FONT_NAME, FONT_SIZE)
+        self.position = SCORE_POS
 
     def draw(self, screen):
-        render = self.font.render(str(self.score), False,(255, 255, 255) )
-        screen.blit(render, (self.x, self.y))
-
-    def update(self):
-        pass
+        render = self.font.render(f"SCORE: {self.score:,}", False,self.color)
+        screen.blit(render, self.position)
 
     def add_points(self, points):
         self.score += points

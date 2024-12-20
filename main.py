@@ -19,7 +19,7 @@ def main():
     dt = 0
     screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
 
-    score = Scoreboard(SCORE_POS[0],SCORE_POS[1], 36 )
+    score = Scoreboard()
     # groups
     updatable = pygame.sprite.Group()
     drawable = pygame.sprite.Group()
@@ -35,7 +35,7 @@ def main():
 
     # Asteroid field
     AsteroidField.containers = updatable
-    
+    asteroid_field = AsteroidField()
 
     # shot
     Shot.containers = (shots, drawable, updatable)
@@ -58,7 +58,7 @@ def main():
                 print("Game over!")
                 sys.exit()
 
-            # collision with bullets and points
+            # collision with bullets and adding points
             for shot in shots:
                 if asteroid.collision(shot):
                     score.add_points(asteroid.get_points())
